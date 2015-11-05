@@ -3,9 +3,18 @@ require 'sinatra/flash'
 require './lib/hangperson_game.rb'
 
 class HangpersonApp < Sinatra::Base
-
   enable :sessions
   register Sinatra::Flash
+  
+  #attr_accessor :word
+  #attr_accessor :guesses
+  #attr_accessor :wrong_guesses
+  
+  #def initialize(my_word, my_guesses = '', my_wrong_guesses = '')
+  #  @word = my_word
+  #  @guesses = my_guesses
+  #  @wrong_guesses = my_wrong_guesses
+  #end
   
   before do
     @game = session[:game] || HangpersonGame.new('')
